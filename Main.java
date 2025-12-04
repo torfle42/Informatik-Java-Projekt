@@ -1,10 +1,3 @@
-<<<<<<< Updated upstream
-import javax.swing.JFrame;
-public class Main extends JFrame {
-    public static void main(String[] args){
-       GUI f = new GUI(640,480);
-       f. setUpGUI();
-=======
 import Util.DateTime;
 import Util.MainWindow;
 import javax.swing.SwingUtilities;
@@ -19,7 +12,6 @@ public class Main{
                 MainWindow main = new MainWindow();
             }
         });
->>>>>>> Stashed changes
     }
 }
 // !DO NOT DELETE!(Might reuse later)
