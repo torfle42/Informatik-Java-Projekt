@@ -9,4 +9,10 @@ public class DateTime {
         String formattedDateTime = now.format(formatter);
         return formattedDateTime;
     }
+    public static int seed(){        
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+        String formattedDateTime = now.format(formatter);
+        return Integer.parseInt(formattedDateTime);
+    }
 }

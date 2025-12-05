@@ -1,17 +1,17 @@
 package Util;
 import java.awt.Color;
 import javax.swing.*;
-
-
 public class MainWindow{
-    private JFrame window;
-    private JButton Settings_button;
-    private JLabel title;
-    private JPanel header;
-    private JPanel body;
-    private JPanel settingsmenu;
+    public JFrame window;
+    public JButton Settings_button;
+    public JLabel title;
+    public JPanel header;
+    public JPanel body;
+    public JPanel settingsmenu;
+    public JPanel mainmenu;
+    public int LastMenu;
     public MainWindow(){
-        System.out.println(DateTime.current()+ ": Initializing Main Window.");
+    System.out.println(DateTime.current()+ ": Initializing Main Window.");
         window = new JFrame();
         window.setLayout(new BoxLayout(window.getContentPane(), BoxLayout.Y_AXIS));
         window.setTitle("Informatik Java Projekt");
@@ -24,15 +24,18 @@ public class MainWindow{
         System.out.println(DateTime.current()+": Main Window Initialized.");
         whatmenu("MainMenu");
     }
-    private Void whatmenu(String menu){
+    private void whatmenu(String menu){
         if(menu=="MainMenu"){
             MainMenu();
         }
-        return null;
+        if(menu=="SettingsMenu"){
+            SettingsMenu();
+        }
     }
     public void MainMenu(){
+        LastMenu = 0;
         System.out.println(DateTime.current()+": Initializing Main Menu.");
-        JPanel mainmenu = new JPanel();
+        mainmenu = new JPanel();
         mainmenu.setBackground(Color.green);
         window.add(mainmenu);
         mainmenu.setVisible(true);
@@ -50,20 +53,23 @@ public class MainWindow{
         body.add(Settings_button);
         Settings_button.addActionListener(new java.awt.event.ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){
-                System.out.println(DateTime.current()+"Pressed Settings Button");
-                settings();
-                window.remove(mainmenu);
+                System.out.println(DateTime.current()+": Pressed Settings Button");
+                SettingsMenu();
             }
         });
         System.out.println(DateTime.current()+": Main Menu Initialized.");
     }
-    public void settings(){
-        Settings_button.setName("Settings");
-        System.out.println(DateTime.current()+"Intitializing Settings Menu");
+    public void SettingsMenu(){
         settingsmenu = new JPanel();
+        if(LastMenu == 0){
+            window.add(settingsmenu);
+            window.setAlwaysOnTop(true);
+            window.remove(mainmenu);
+        }
+        Settings_button.setName("Settings");
+        System.out.println(DateTime.current()+": Intitializing Settings Menu");
         settingsmenu.setBackground(Color.orange);
-        window.add(settingsmenu);
         settingsmenu.setVisible(true);
-        System.out.println(DateTime.current()+"Settings Menu Initialized");
+        System.out.println(DateTime.current()+": Settings Menu Initialized");
     }
 }
