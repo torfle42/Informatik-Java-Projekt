@@ -1,5 +1,5 @@
 package Util;
-import java.awt.Color;
+import java.awt.*;
 import javax.swing.*;
 public class MainWindow{
     public JFrame window;
@@ -10,6 +10,8 @@ public class MainWindow{
     public JPanel settingsmenu;
     public JPanel mainmenu;
     public int LastMenu;
+    public JButton MainMenu_Button;
+    public JButton QuitButton;
     public MainWindow(){
     System.out.println(DateTime.current()+ ": Initializing Main Window.");
         window = new JFrame();
@@ -33,11 +35,14 @@ public class MainWindow{
         }
     }
     public void MainMenu(){
+        mainmenu = new JPanel();
+        if (LastMenu == 1){
+            window.remove(settingsmenu);
+        }
+        window.add(mainmenu);
         LastMenu = 0;
         System.out.println(DateTime.current()+": Initializing Main Menu.");
-        mainmenu = new JPanel();
         mainmenu.setBackground(Color.green);
-        window.add(mainmenu);
         mainmenu.setVisible(true);
         header = new JPanel();
         header.setBackground(Color.magenta);
@@ -57,19 +62,37 @@ public class MainWindow{
                 SettingsMenu();
             }
         });
+        QuitButton = new JButton("Quit");
+        mainmenu.add(QuitButton);
+        QuitButton.addActionListener(new java.awt.event.ActionListener(){
+            public void actionPerfomed(java.awt.event.ActionEvent evt){
+                System.out.println(DateTime.current()+":  Quit Program"); 
+            }
+        });
+        window.revalidate();
         System.out.println(DateTime.current()+": Main Menu Initialized.");
     }
     public void SettingsMenu(){
         settingsmenu = new JPanel();
         if(LastMenu == 0){
-            window.add(settingsmenu);
-            window.setAlwaysOnTop(true);
             window.remove(mainmenu);
+            window.add(settingsmenu);
+            window.revalidate(); //actually makes changes happen
         }
+        LastMenu = 1;
         Settings_button.setName("Settings");
         System.out.println(DateTime.current()+": Intitializing Settings Menu");
         settingsmenu.setBackground(Color.orange);
         settingsmenu.setVisible(true);
         System.out.println(DateTime.current()+": Settings Menu Initialized");
+        MainMenu_Button = new JButton("Main Menu");
+        settingsmenu.add(MainMenu_Button);
+        MainMenu_Button.addActionListener(new java.awt.event.ActionListener(){
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                System.out.println(DateTime.current()+": Pressed Main Menu Button");
+                MainMenu();
+            }
+        });
+        settingsmenu.revalidate();
     }
 }
