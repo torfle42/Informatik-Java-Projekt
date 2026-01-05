@@ -12,6 +12,21 @@ String name = sc.nextLine();
 System.out.println(name + ". Is that right?");
 
         }
+        System.out.println("Choose your class");
+        System.out.println("Warrior: High strength and endurance, low agility and luck. Strong kill. But sword kills better. ==1");
+        System.out.println("Mage: High Intelligence and perception, low strength and endurance. Has read every book there is and then some. ==2"); 
+System.out.println("Thief: High agility and charisma, low endurance and intelligence. A smile can get you somewhere. Even if that somewhere is in someone elses pocket. ==3");
+System.out.println("Ranger: High charisma and luck, low agility and strength. Not the ranger everyone expects but sheep are more fun than bows. Right? ==4");
+System.out.println("Gambler: Highest Luck everything else average. Bet everything on red boiiiiiiiiiiiiiii. ==5");
+System.out.println("Idiot: Lowest Intelligence, perception and charisma. But highest stregth, agility, and endurance. Who let this idiot in here??? ==6");
+Scanner sc2 = new Scanner(System.in);
+int clss = sc2.nextInt();
+switch (clss) {    
+    case 1:
+        System.out.println("You're now a warrior.");
+        
+    
+    
     }
 
 
