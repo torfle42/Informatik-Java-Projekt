@@ -6,15 +6,9 @@ public class chara{
         int stats[] = new int[7];
         
         int indstts[] = new int[7];
-        while (a == false) {
-            
         
-        Scanner sc = new Scanner(System.in);
-System.out.println("Enter your new name");
-String name = sc.nextLine();
-System.out.println(name + ". Is that right?");
 
-        }
+        
         System.out.println("Choose your class");
         System.out.println("Warrior: High strength and endurance, low agility and luck. Strong kill. But sword kills better. ==1");
         System.out.println("Mage: High Intelligence and perception, low strength and endurance. Has read every book there is and then some. ==2"); 
@@ -51,7 +45,16 @@ switch (clss) {
             break;
 }
     
+while (a == false) {
+            
+        
+        Scanner sc = new Scanner(System.in);
+System.out.println("Finally, enter your new name");
+String name = sc.nextLine();
+System.out.println(name + ". Is that right?");
+}
     }
+
 
 
 public static int stat (int clss , int base){
