@@ -1,98 +1,177 @@
 package Util;
-import java.awt.*;
+import java.awt.Color;
 import javax.swing.*;
 public class MainWindow{
-    public JFrame window;
-    public JButton Settings_button;
-    public JLabel title;
-    public JPanel header;
-    public JPanel body;
-    public JPanel settingsmenu;
-    public JPanel mainmenu;
-    public int LastMenu;
-    public JButton MainMenu_Button;
-    public JButton QuitButton;
+    //Window Components
+    public String titleString = "D&D 5th Edition Character Generator";
+    public JFrame window = new JFrame(titleString);
+    public String CurrentJPanel = null;
+    public JLabel title = new JLabel(titleString);
+
+    //Main Menu Components
+    public JPanel MainMenuJPanel = new JPanel();
+    public JButton MainMenuJButton = new JButton("Main Menu");
+    public JLabel MainMenuTitleJLabel = new JLabel(titleString);
+
+    //Settings Menu Components
+    public JPanel SettingsMenuJPanel = new JPanel();
+    public JButton SettingsMenuJButton = new JButton("Settings");
+
+    //Character Creation Menu Components
+    public JPanel CharacterCreationMenuJPanel = new JPanel();
+    public JButton CharacterCreationMenuJButton = new JButton("Create new chracter");
+    public JLabel CharacterCreationMenuTitleJLabel = new JLabel("Create your Chracter!");
+
+    //Created Character Menu Components
+    public JPanel CreatedCharacterMenuJPanel = new JPanel();   
+    public JButton CreatedCharacterMenuJButton = new JButton("View created characters");
+
+    //Quit Menu Components
+    public JPanel QuitMenuJPanel = new JPanel();
+    public JButton QuitMenuJButton = new JButton();
+    
+    public void refresh(){ // simpler anstatt immer und immer wieder die gleichen 3 zeilen zu schreiben
+        window.revalidate();
+        window.repaint();
+    }
     public MainWindow(){
-    System.out.println(DateTime.current()+ ": Initializing Main Window.");
-        window = new JFrame();
+    System.out.println(DateTime.current()+": Initializing Main Window.");
         window.setLayout(new BoxLayout(window.getContentPane(), BoxLayout.Y_AXIS));
-        window.setTitle("Informatik Java Projekt");
-        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setSize(Screeninfo.width(0), Screeninfo.height(0));
         window.setExtendedState(JFrame.MAXIMIZED_BOTH);
         window.setLocationRelativeTo(null);
         window.setVisible(true);
         window.setAlwaysOnTop(false);
+        window.getContentPane().setBackground(Color.blue);
         System.out.println(DateTime.current()+": Main Window Initialized.");
-        whatmenu("MainMenu");
-    }
-    private void whatmenu(String menu){
-        if(menu=="MainMenu"){
-            MainMenu();
-        }
-        if(menu=="SettingsMenu"){
-            SettingsMenu();
-        }
+        MainMenu();   
     }
     public void MainMenu(){
-        mainmenu = new JPanel();
-        if (LastMenu == 1){
-            window.remove(settingsmenu);
-        }
-        window.add(mainmenu);
-        LastMenu = 0;
-        System.out.println(DateTime.current()+": Initializing Main Menu.");
-        mainmenu.setBackground(Color.green);
-        mainmenu.setVisible(true);
-        header = new JPanel();
-        header.setBackground(Color.magenta);
-        mainmenu.add(header);
-        header.setVisible(true);
-        title = new JLabel("Undefiend");
-        title.setFont(new java.awt.Font("Arial", java.awt.Font.PLAIN,50));
-        header.add(title);
-        body = new JPanel();
-        body.setBackground(Color.cyan);
-        mainmenu.add(body);
-        Settings_button = new JButton("Settings");
-        body.add(Settings_button);
-        Settings_button.addActionListener(new java.awt.event.ActionListener(){
-            public void actionPerformed(java.awt.event.ActionEvent evt){
-                System.out.println(DateTime.current()+": Pressed Settings Button");
-                SettingsMenu();
+
+        // Setup Main Menu JPanel
+        window.getContentPane().removeAll();
+        System.out.println(DateTime.current()+ ": Loading Main Menu JPanel.");
+        MainMenuJPanel.setLayout(new BoxLayout(MainMenuJPanel, BoxLayout.Y_AXIS));
+        window.getContentPane().add(MainMenuJPanel);
+        MainMenuJPanel.setVisible(true);
+        MainMenuJPanel.setSize(window.getWidth(), window.getHeight());
+        CurrentJPanel = "MainMenu";
+
+        //adding content
+        System.out.println(DateTime.current()+ ": Adding Main Menu JPanel content.");
+        MainMenuJPanel.add(MainMenuTitleJLabel);
+        MainMenuTitleJLabel.setFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 50));
+        MainMenuTitleJLabel.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        MainMenuTitleJLabel.setAlignmentY(java.awt.Component.CENTER_ALIGNMENT);
+        MainMenuTitleJLabel.setVisible(true);
+        SettingsMenuJButton.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        SettingsMenuJButton.setAlignmentY(java.awt.Component.CENTER_ALIGNMENT);
+        MainMenuJPanel.add(SettingsMenuJButton);
+        SettingsMenuJButton.addActionListener(
+            new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    SettingsMenu();
+                }
             }
-        });
-        QuitButton = new JButton("Quit");
-        mainmenu.add(QuitButton);
-        QuitButton.addActionListener(new java.awt.event.ActionListener(){
-            public void actionPerfomed(java.awt.event.ActionEvent evt){
-                System.out.println(DateTime.current()+":  Quit Program"); 
+        );
+        SettingsMenuJButton.setVisible(true);
+        MainMenuJPanel.add(CharacterCreationMenuJButton);
+        CharacterCreationMenuJButton.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        CharacterCreationMenuJButton.setAlignmentY(java.awt.Component.CENTER_ALIGNMENT);
+        MainMenuJPanel.add(CharacterCreationMenuJButton);
+        CharacterCreationMenuJButton.setVisible(true);
+        CharacterCreationMenuJButton.addActionListener(
+            new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    CreatedCharacterMenu();
+                    System.out.println(DateTime.current()+": Opened Character Creation Menu JPanel.");
+                }
             }
-        });
-        window.revalidate();
-        System.out.println(DateTime.current()+": Main Menu Initialized.");
-    }
+        );
+        MainMenuJPanel.add(CreatedCharacterMenuJButton);
+        CreatedCharacterMenuJButton.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        CreatedCharacterMenuJButton.setAlignmentY(java.awt.Component.CENTER_ALIGNMENT);
+        CreatedCharacterMenuJButton.setVisible(true);
+        CreatedCharacterMenuJButton.addActionListener(
+            new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    CreatedCharacterMenu();
+                }
+            }
+        );
+        MainMenuJPanel.add(CreatedCharacterMenuJButton);
+        CreatedCharacterMenuJButton.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        CreatedCharacterMenuJButton.setAlignmentY(java.awt.Component.CENTER_ALIGNMENT);
+        CreatedCharacterMenuJButton.setVisible(true);
+        CreatedCharacterMenuJButton.addActionListener(
+            new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    CreatedCharacterMenu();
+                }
+            }
+        );
+        MainMenuJPanel.add(QuitMenuJButton);
+        QuitMenuJButton.setText("Quit");
+        QuitMenuJButton.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        QuitMenuJButton.setAlignmentY(java.awt.Component.CENTER_ALIGNMENT);
+        QuitMenuJButton.setVisible(true);
+        QuitMenuJButton.addActionListener(
+            new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    System.out.println(DateTime.current()+ ": Quit Application.");
+                    System.exit(0);
+                }
+            }
+        );
+        //refreshing window
+        refresh();
+        System.out.println(DateTime.current()+ ": Main Menu JPanel Loaded.");
+    } 
     public void SettingsMenu(){
-        settingsmenu = new JPanel();
-        if(LastMenu == 0){
-            window.remove(mainmenu);
-            window.add(settingsmenu);
-            window.revalidate(); //actually makes changes happen
-        }
-        LastMenu = 1;
-        Settings_button.setName("Settings");
-        System.out.println(DateTime.current()+": Intitializing Settings Menu");
-        settingsmenu.setBackground(Color.orange);
-        settingsmenu.setVisible(true);
-        System.out.println(DateTime.current()+": Settings Menu Initialized");
-        MainMenu_Button = new JButton("Main Menu");
-        settingsmenu.add(MainMenu_Button);
-        MainMenu_Button.addActionListener(new java.awt.event.ActionListener(){
-            public void actionPerformed(java.awt.event.ActionEvent evt){
-                System.out.println(DateTime.current()+": Pressed Main Menu Button");
-                MainMenu();
+        window.getContentPane().removeAll();
+        System.out.println(DateTime.current()+ ": Loading Settings Menu JPanel.");
+        window.getContentPane().add(SettingsMenuJPanel);
+        window.add(SettingsMenuJPanel);
+        SettingsMenuJPanel.setVisible(true);
+        CurrentJPanel = "SettingsMenu";
+        //content
+        SettingsMenuJPanel.add(MainMenuJButton);
+        MainMenuJButton.addActionListener(
+            new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    MainMenu();
+                }
             }
-        });
-        settingsmenu.revalidate();
+        );
+        MainMenuJButton.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        MainMenuJButton.setAlignmentY(java.awt.Component.CENTER_ALIGNMENT);
+        MainMenuJButton.setVisible(true);
+        //refreshing window
+        refresh();
+    }
+    public void CharacterCreationMenu(){
+        //Setup Character Creation Menu JPanel
+        window.getContentPane().removeAll();
+        System.out.println(DateTime.current()+ ": Loading Character Creation Menu JPanel.");
+        window.getContentPane().add(CharacterCreationMenuJPanel);
+        CharacterCreationMenuJPanel.setVisible(true);
+        CurrentJPanel = "CharacterCreationMenu";
+        //content
+        CharacterCreationMenuJPanel.add(CharacterCreationMenuTitleJLabel);
+        CharacterCreationMenuTitleJLabel.setFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 50));
+        CharacterCreationMenuTitleJLabel.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        CharacterCreationMenuTitleJLabel.setAlignmentY(java.awt.Component.CENTER_ALIGNMENT);
+        CharacterCreationMenuTitleJLabel.setVisible(true);
+        //refreshing window
+        refresh();
+    }
+    public void CreatedCharacterMenu(){
+        window.getContentPane().removeAll();
+        System.out.println(DateTime.current()+ ": Loading Created Character Menu JPanel.");
+        window.getContentPane().add(CreatedCharacterMenuJPanel);
+        CurrentJPanel = "CreatedCharacterMenu";
+        System.out.println(DateTime.current()+ ": Loading Created Character Menu JPanel content.");
+        refresh();
     }
 }
