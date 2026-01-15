@@ -3,9 +3,6 @@ import java.util.Scanner;
 public class chara{
     public static void character (){
         boolean a = false;
-        int stats[] = new int[7];
-        
-        int indstts[] = new int[7];
         
 
         
@@ -21,27 +18,24 @@ int clss = sc2.nextInt();
 switch (clss) {    
     case 1:
         System.out.println("You're now a warrior.");
-        int clssstts[] = {3,1,3,1,1,-3,-3};
+    
         break;
         case 2:
             System.out.println("You're now a mage.");
-            int clssstts[] = {-3,3,-3,1,3,1,1};
             break;
         case 3:
             System.out.println("You're now a thief.");
-            int clssstts[] = {1,1,-3,3,-3,3,1};
             break;
         case 4:
             System.out.println("You're now a ranger.");
-            int clssstts[] = {-3,1,1,3,1,-3,3};
             break;
         case 5:
             System.out.println("You're now a gambler.");
-            int clssstts[] = {1,1,1,1,1,1,7};
+            
             break;
         case 6:
             System.out.println("You're now an idiot.");
-            int clssstts[] = {5,-5,5,-5,-5,5,1};
+            
             break;
 }
     
