@@ -16,7 +16,7 @@ Scanner sc2 = new Scanner(System.in);
 int rc = sc2.nextInt();
 switch (rc) {    
     case 1:
-        System.out.println("You're now a warrior.");
+        System.out.println("You're now a human.");
     
         break;
         case 2:
