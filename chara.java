@@ -57,26 +57,41 @@ Scanner sc3 = new Scanner(System.in);
 int clss = sc3.nextInt();
 switch (clss) {    
     case 1:
-        System.out.println("You're now a human.");
+        System.out.println("You're now a Barbarian.");
     
         break;
         case 2:
-            System.out.println("You're now a Hill Dwarf.");
+            System.out.println("You're now a Bard.");
             break;
         case 3:
-            System.out.println("You're now a Mountain Dwarf.");
+            System.out.println("You're now a Cleric.");
             break;
         case 4:
-            System.out.println("You're now a High Elf.");
+            System.out.println("You're now a Druid.");
             break;
         case 5:
-            System.out.println("You're now a Wood Elf.");
+            System.out.println("You're now a Fighter.");
             break;
         case 6:
-            System.out.println("You're now a Dark Elf (Drow).");
+            System.out.println("You're now a Monk.");
             break;
         case 7:
-            System.out.println("You're now a Tiefling.");
+            System.out.println("You're now a Paladin.");
+            break;
+        case 8:
+            System.out.println("You're now a Ranger.");
+            break;
+        case 9:
+            System.out.println("You're now a Rogue.");
+            break;
+        case 10:
+            System.out.println("You're now a Sourcerer.");
+            break;
+        case 11:
+            System.out.println("You're now a Warlock.");
+            break;
+        case 12:
+            System.out.println("You're now a Wizard.");
             break;
 }
 while (a == false) {
