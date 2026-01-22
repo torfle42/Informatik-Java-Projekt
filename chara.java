@@ -17,7 +17,7 @@ System.out.println("Dark Elf (Drow): Following a path of evil and corruption. +2
 System.out.println("Tiefling: +2 in Charisma +1 in intelligence. Speed: 30ft, Size: Medium, type: Humanoid, Languages: Common + Infernal, Darkvision: up to 60ft, Traits: Hellish resistance, Infernal Legacy ==7");
 Scanner sc2 = new Scanner(System.in);
 int rc = sc2.nextInt();
-String rac;
+String rac = null;
 switch (rc) {    
     case 1:
         rac = "Human";
@@ -82,56 +82,56 @@ System.out.println("Warlock: Wielder of magic, that came from a bargain with an 
 System.out.println("Wizard: Scholarly magic user, capable of manipulating the structures of reality. Hit die: 1d6, Primary Ability: Intelligence, Saving Throw proficiencies: Intelligence + Wisdom, Armor and Weapon proficiencies: Daggers, darts, slings, quarterstaffs, light crossbows ==12");
 Scanner sc3 = new Scanner(System.in);
 int clss = sc3.nextInt();
-String class;
+String charclass = null;
 switch (clss) {    
     case 1:
-        class = "Barbarian";
+        charclass = "Barbarian";
         System.out.println("You're now a Barbarian.");
     
         break;
 
         case 2:
-            class = "Bard";
+            charclass = "Bard";
             System.out.println("You're now a Bard.");
             break;
         case 3:
-            class = "Cleric";
+            charclass = "Cleric";
             System.out.println("You're now a Cleric.");
             break;
         case 4:
-            class = "Druid";
+            charclass = "Druid";
             System.out.println("You're now a Druid.");
             break;
         case 5:
-            class = "Fighter";
+            charclass = "Fighter";
             System.out.println("You're now a Fighter.");
             break;
         case 6:
-            class = "Monk";
+            charclass = "Monk";
             System.out.println("You're now a Monk.");
             break;
         case 7:
-            class = "Paladin";
+            charclass = "Paladin";
             System.out.println("You're now a Paladin.");
             break;
         case 8:
-            class = "Ranger";
+            charclass = "Ranger";
             System.out.println("You're now a Ranger.");
             break;
         case 9:
-            class = "Rogue";
+            charclass = "Rogue";
             System.out.println("You're now a Rogue.");
             break;
         case 10:
-            class = "Sourcerer";
+            charclass = "Sourcerer";
             System.out.println("You're now a Sourcerer.");
             break;
         case 11:
-            class = "Warlock";
+            charclass = "Warlock";
             System.out.println("You're now a Warlock.");
             break;
         case 12:
-            class = "Wizard";
+            charclass = "Wizard";
             System.out.println("You're now a Wizard.");
             break;
 }
@@ -156,20 +156,20 @@ intel += abilityScores[3];
 wis += abilityScores[4];
 chr += abilityScores[5];
 
-
+String char_name=null;
 while (a == false) {
             
         
         Scanner sc = new Scanner(System.in);
 System.out.println("Finally, enter your new name");
-String name = sc.nextLine();
-System.out.println(name + ". Is that right?");
+char_name = sc.nextLine();
+System.out.println(char_name + ". Is that right?");
 }
 
 System.out.println("Here is your Character:");
-System.out.println("Name: " + name);
+System.out.println("Name: " + char_name);
 System.out.println("Race: " + rac);
-System.out.println("Class: " + class);
+System.out.println("Class: " + charclass);
 System.out.println("Strength: " + str);
 System.out.println("Dexterity: " + dex);
 System.out.println("Constitution: " + con);
