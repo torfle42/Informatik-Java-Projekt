@@ -4,7 +4,8 @@ public class chara{
     public static void character (){
         boolean a = false;
         
-
+int[] abilityScores = new int[6];
+int hpmax = 0;
         
         System.out.println("Choose your race");
         System.out.println("Human: Very adaptive and innovative. +1 in all ability scores. Speed: 30ft, Size: Medium, type: Humanoid, Languages: Common + 1 other language, Traits: none ==1");
@@ -19,25 +20,43 @@ int rc = sc2.nextInt();
 switch (rc) {    
     case 1:
         System.out.println("You're now a human.");
-    
+    abilityScores[0] = 1;
+    abilityScores[1] = 1;
+    abilityScores[2] = 1;
+    abilityScores[3] = 1;
+    abilityScores[4] = 1;
+    abilityScores[5] = 1;
         break;
         case 2:
             System.out.println("You're now a Hill Dwarf.");
+            abilityScores[2] = 2;
+            abilityScores[4] = 1;
+            hpmax = 1;
             break;
         case 3:
             System.out.println("You're now a Mountain Dwarf.");
+            abilityScores[0] = 2;
+            abilityScores[2] = 2;
             break;
         case 4:
             System.out.println("You're now a High Elf.");
+            abilityScores[1] = 2;
+            abilityScores[3] = 1;
             break;
         case 5:
             System.out.println("You're now a Wood Elf.");
+            abilityScores[1] = 2;
+            abilityScores[4] = 1;
             break;
         case 6:
             System.out.println("You're now a Dark Elf (Drow).");
+            abilityScores[1] = 2;
+            abilityScores[5] = 1;
             break;
         case 7:
             System.out.println("You're now a Tiefling.");
+            abilityScores[5] = 2;
+            abilityScores[3] = 1;
             break;
 }
    System.out.println("Choose your class");  
