@@ -17,8 +17,10 @@ System.out.println("Dark Elf (Drow): Following a path of evil and corruption. +2
 System.out.println("Tiefling: +2 in Charisma +1 in intelligence. Speed: 30ft, Size: Medium, type: Humanoid, Languages: Common + Infernal, Darkvision: up to 60ft, Traits: Hellish resistance, Infernal Legacy ==7");
 Scanner sc2 = new Scanner(System.in);
 int rc = sc2.nextInt();
+String rac;
 switch (rc) {    
     case 1:
+        rac = "Human";
         System.out.println("You're now a human.");
     abilityScores[0] = 1;
     abilityScores[1] = 1;
@@ -28,32 +30,38 @@ switch (rc) {
     abilityScores[5] = 1;
         break;
         case 2:
+            rac = "Hill Dwarf";
             System.out.println("You're now a Hill Dwarf.");
             abilityScores[2] = 2;
             abilityScores[4] = 1;
             hpmax = 1;
             break;
         case 3:
+            rac = "Mountain Dwarf";
             System.out.println("You're now a Mountain Dwarf.");
             abilityScores[0] = 2;
             abilityScores[2] = 2;
             break;
         case 4:
+            rac = "High Elf";
             System.out.println("You're now a High Elf.");
             abilityScores[1] = 2;
             abilityScores[3] = 1;
             break;
         case 5:
+            rac = "Wood Elf";
             System.out.println("You're now a Wood Elf.");
             abilityScores[1] = 2;
             abilityScores[4] = 1;
             break;
         case 6:
+            rac = "Dark Elf (Drow)";
             System.out.println("You're now a Dark Elf (Drow).");
             abilityScores[1] = 2;
             abilityScores[5] = 1;
             break;
         case 7:
+            rac = "Tiefling";
             System.out.println("You're now a Tiefling.");
             abilityScores[5] = 2;
             abilityScores[3] = 1;
@@ -74,45 +82,81 @@ System.out.println("Warlock: Wielder of magic, that came from a bargain with an 
 System.out.println("Wizard: Scholarly magic user, capable of manipulating the structures of reality. Hit die: 1d6, Primary Ability: Intelligence, Saving Throw proficiencies: Intelligence + Wisdom, Armor and Weapon proficiencies: Daggers, darts, slings, quarterstaffs, light crossbows ==12");
 Scanner sc3 = new Scanner(System.in);
 int clss = sc3.nextInt();
+String class;
 switch (clss) {    
     case 1:
+        class = "Barbarian";
         System.out.println("You're now a Barbarian.");
     
         break;
+
         case 2:
+            class = "Bard";
             System.out.println("You're now a Bard.");
             break;
         case 3:
+            class = "Cleric";
             System.out.println("You're now a Cleric.");
             break;
         case 4:
+            class = "Druid";
             System.out.println("You're now a Druid.");
             break;
         case 5:
+            class = "Fighter";
             System.out.println("You're now a Fighter.");
             break;
         case 6:
+            class = "Monk";
             System.out.println("You're now a Monk.");
             break;
         case 7:
+            class = "Paladin";
             System.out.println("You're now a Paladin.");
             break;
         case 8:
+            class = "Ranger";
             System.out.println("You're now a Ranger.");
             break;
         case 9:
+            class = "Rogue";
             System.out.println("You're now a Rogue.");
             break;
         case 10:
+            class = "Sourcerer";
             System.out.println("You're now a Sourcerer.");
             break;
         case 11:
+            class = "Warlock";
             System.out.println("You're now a Warlock.");
             break;
         case 12:
+            class = "Wizard";
             System.out.println("You're now a Wizard.");
             break;
 }
+
+System.out.println("The stats for your character are randomly determined.");
+int str = rng();
+System.out.println("Strength: " + str + " + " + abilityScores[0]);
+int dex = rng();
+System.out.println("Dexterity: " + dex + " + " + abilityScores[1]);
+int con = rng();
+System.out.println("Constitution: " + con + " + " + abilityScores[2]);
+int intel = rng();
+System.out.println("Intelligence: " + intel + " + " + abilityScores[3]);
+int wis = rng();
+System.out.println("Wisdom: " + wis + " + " + abilityScores[4]);
+int chr = rng();
+System.out.println("Charisma: " + chr + " + " + abilityScores[5]);
+str += abilityScores[0];
+dex += abilityScores[1];
+con += abilityScores[2];
+intel += abilityScores[3];
+wis += abilityScores[4];
+chr += abilityScores[5];
+
+
 while (a == false) {
             
         
@@ -121,8 +165,30 @@ System.out.println("Finally, enter your new name");
 String name = sc.nextLine();
 System.out.println(name + ". Is that right?");
 }
+
+System.out.println("Here is your Character:");
+System.out.println("Name: " + name);
+
     }
 
+    public static int rng(){
+        int total = 0;
+        int[] rolls = new int[4];
+        for (int i = 0; i < 4; i++){
+            rolls[i] = (int)(Math.random() * 6) + 1;
+        }
+        int min = rolls[0];
+        for (int i = 1; i < 4; i++){
+            if (rolls[i] < min){
+                min = rolls[i];
+            }
+        }
+        for (int i = 0; i < 4; i++){
+            total += rolls[i];
+        }
+        total -= min;
+        return total;
+    }
 
 
 
