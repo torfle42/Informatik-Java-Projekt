@@ -168,7 +168,15 @@ System.out.println(name + ". Is that right?");
 
 System.out.println("Here is your Character:");
 System.out.println("Name: " + name);
-
+System.out.println("Race: " + rac);
+System.out.println("Class: " + class);
+System.out.println("Strength: " + str);
+System.out.println("Dexterity: " + dex);
+System.out.println("Constitution: " + con);
+System.out.println("Intelligence: " + intel);
+System.out.println("Wisdom: " + wis);
+System.out.println("Charisma: " + chr);
+System.out.println("Hit Point Maximum: " + hpmax);
     }
 
     public static int rng(){
