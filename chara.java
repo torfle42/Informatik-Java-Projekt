@@ -5,8 +5,10 @@ public class chara{
         boolean a = false;
         
 int[] abilityScores = new int[6];
+//I have no idea how to calculate this
 int hpmax = 0;
         
+//race selection, no button/list
         System.out.println("Choose your race");
         System.out.println("Human: Very adaptive and innovative. +1 in all ability scores. Speed: 30ft, Size: Medium, type: Humanoid, Languages: Common + 1 other language, Traits: none ==1");
         System.out.println("Hill Dwarf: Keen senses, deep intuition and remarkable resilience. +2 in Constitution +1 in wisdom +1 in hit point maximum. Speed: 25ft, Size: Medium, type: Humanoid, Languages: Common + Dwarvish, Darkvision: up to 60ft, Traits: Dwarven Resilience, Dwarven combat training, Tool proficiency, Stonecunning ==2"); 
@@ -66,6 +68,8 @@ switch (rc) {
             abilityScores[5] = 2;
             abilityScores[3] = 1;
             break;
+
+            //class without a button/list
 }
    System.out.println("Choose your class");  
            System.out.println("Barbarian: Fierce Warrior with primitive background. Can enter a battle rage. Hit die: 1d12, Primary Ability: Strength, Saving Throw proficiencies: Strength + Constitution, Armor and Weapon proficiencies: Light/medium armor, shields, simple/martial weapons ==1");
@@ -136,6 +140,8 @@ switch (clss) {
             break;
 }
 
+//Ability Scores
+
 System.out.println("The stats for your character are randomly determined.");
 int str = rng();
 System.out.println("Strength: " + str + " + " + abilityScores[0]);
@@ -156,6 +162,7 @@ intel += abilityScores[3];
 wis += abilityScores[4];
 chr += abilityScores[5];
 
+//Name (Not completed because I have no UI button)
 String char_name=null;
 while (a == false) {
             
@@ -166,6 +173,7 @@ char_name = sc.nextLine();
 System.out.println(char_name + ". Is that right?");
 }
 
+//Final character sheet
 System.out.println("Here is your Character:");
 System.out.println("Name: " + char_name);
 System.out.println("Race: " + rac);
@@ -180,6 +188,7 @@ System.out.println("Hit Point Maximum: " + hpmax);
     }
 
     public static int rng(){
+        //random rolls for stats
         int total = 0;
         int[] rolls = new int[4];
         for (int i = 0; i < 4; i++){
