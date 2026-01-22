@@ -10,5 +10,6 @@ public class Main{
                 MainWindow main = new MainWindow();
             }
         });
+        System.out.println(Util.Screeninfo.total());
     }
 }
