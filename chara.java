@@ -9,13 +9,13 @@ int[] abilityScores = new int[6];
 int hpmax = 0;
         
 //race selection, no button/list
-    String HumanDescript="Humans are adaptive and innovative. They gain +1 to all ability scores. and have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and one extra language of their choice. Humans do not have any special traits.";
-    String HillDwarfDescript="Hill Dwarves have keen senses, deep intuition, and remarkable resilience. They gain +2 to Constitution and +1 to Wisdom. Their hit point maximum increases by 1 every level. They have a base movement speed of 25ft.(7,620m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Dwarvish. They have Darkvision up to 60ft.(18,288m) and possess the traits Dwarven Resilience, Dwarven Combat Training, Tool Proficiency, and Stonecunning.";
-    String MountainDwarfDescript="Mountain Dwarves are strong and hardy, accustomed to a difficult terrain. They gain +2 to Constitution and +2 to Strength. They have a base movement speed of 25ft.(7,620m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Dwarvish. They have Darkvision up to 60ft.(18,288m) and possess the traits Dwarven Resilience, Dwarven Combat Training, Tool Proficiency, Stonecunning, and Dwarven Toughness.";
-    String HighElfDescript="High Elves have a keen mind and a mastery of basic magic. They gain +2 to Dexterity and +1 to Intelligence. They have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common, Elvish, and one extra language of their choice. They have Darkvision up to 60ft.(18,288m) and possess the traits Fey Ancestry, Keen Senses, Trance, Elf Weapon Training, and cantrip.";
-    String WoodElfDescript="Wood Elves have keen senses and intuition, and are very quick and stealthy in their native forests. They gain +2 to Dexterity and +1 to Wisdom. They have a base movement speed of 35ft.(10,668m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Elvish. They have Darkvision up to 60ft.(18,288m) and possess the traits Fey Ancestry, Keen Senses, Trance, Elf Weapon Training, and Mask of the Wild.";
-    String DarkElfDescript="Dark Elves, also known as Drow, follow a path of evil and corruption. They gain +2 to Dexterity and +1 to Charisma. They have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Elvish. They have Darkvision up to 120ft.(36,576m) and possess the traits Fey Ancestry, Keen Senses, Trance, Drow Weapon Training, Sunlight Sensitivity, and Drow Magic.";
-    String TieflingDescript="Tieflings gain +2 to Charisma and +1 to Intelligence. They have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Infernal. They have Darkvision up to 60ft.(18,288m) and possess the traits Hellish Resistance and Infernal Legacy.";
+    String HumanDescript = "Humans are adaptive and innovative. They gain +1 to all ability scores. and have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and one extra language of their choice. Humans do not have any special traits.";
+    String HillDwarfDescript = "Hill Dwarves have keen senses, deep intuition, and remarkable resilience. They gain +2 to Constitution and +1 to Wisdom. Their hit point maximum increases by 1 every level. They have a base movement speed of 25ft.(7,620m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Dwarvish. They have Darkvision up to 60ft.(18,288m) and possess the traits Dwarven Resilience, Dwarven Combat Training, Tool Proficiency, and Stonecunning.";
+    String MountainDwarfDescript = "Mountain Dwarves are strong and hardy, accustomed to a difficult terrain. They gain +2 to Constitution and +2 to Strength. They have a base movement speed of 25ft.(7,620m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Dwarvish. They have Darkvision up to 60ft.(18,288m) and possess the traits Dwarven Resilience, Dwarven Combat Training, Tool Proficiency, Stonecunning, and Dwarven Toughness.";
+    String HighElfDescript = "High Elves have a keen mind and a mastery of basic magic. They gain +2 to Dexterity and +1 to Intelligence. They have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common, Elvish, and one extra language of their choice. They have Darkvision up to 60ft.(18,288m) and possess the traits Fey Ancestry, Keen Senses, Trance, Elf Weapon Training, and cantrip.";
+    String WoodElfDescript = "Wood Elves have keen senses and intuition, and are very quick and stealthy in their native forests. They gain +2 to Dexterity and +1 to Wisdom. They have a base movement speed of 35ft.(10,668m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Elvish. They have Darkvision up to 60ft.(18,288m) and possess the traits Fey Ancestry, Keen Senses, Trance, Elf Weapon Training, and Mask of the Wild.";
+    String DarkElfDescript = "Dark Elves, also known as Drow, follow a path of evil and corruption. They gain +2 to Dexterity and +1 to Charisma. They have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Elvish. They have Darkvision up to 120ft.(36,576m) and possess the traits Fey Ancestry, Keen Senses, Trance, Drow Weapon Training, Sunlight Sensitivity, and Drow Magic.";
+    String TieflingDescript = "Tieflings gain +2 to Charisma and +1 to Intelligence. They have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Infernal. They have Darkvision up to 60ft.(18,288m) and possess the traits Hellish Resistance and Infernal Legacy.";
 Scanner sc2 = new Scanner(System.in);
 int rc = sc2.nextInt();
 String rac = null;
@@ -71,18 +71,18 @@ switch (rc) {
             //class without a button/list
 }
    System.out.println("Choose your class");  
-           System.out.println("Barbarian: Fierce Warrior with primitive background. Can enter a battle rage. Hit die: 1d12, Primary Ability: Strength, Saving Throw proficiencies: Strength + Constitution, Armor and Weapon proficiencies: Light/medium armor, shields, simple/martial weapons ==1");
-        System.out.println("Bard: Inspiring Magician whose power echoes the music of creation. Hit die: 1d8, Primary Ability: Charisma, Saving Throw proficiencies: Dexterity + Charisma, Armor and Weapon proficiencies: Light armor, simple weapons, hand crossbows, long/shortswords, rapiers ==2"); 
-System.out.println("Cleric: Priestly champion who wields divine magic in service of a higher power. Hit die: 1d8, Primary Abilities: Wisdom, Saving Throw proficiencies: Wisdom + Charisma, Armor and Weapon proficiencies: Light/medium armor, shields, simple Weapons ==3");
-System.out.println("Druid: Priest of Old faith wielding the powers of nature. Able to adopt animal forms. Hit die: 1d8, Primary Ability: Wisdom, Saving Throw proficiencies: Wisdom + Intelligence, Armor and Weapon proficiencies: nonmetal light/medium armor, nonmetal shields, clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears ==4");
-System.out.println("Fighter: Master of martial combats and skilled with many weapons and armor. Hit die: 1d10, Primary Ability: Strength or Dexterity, Saving Throw proficiencies: Strength + Constitution, Armor and Weapon proficiencies: All armor, shields, simple/martial weapons ==5");
-System.out.println("Monk: Master of martial arts harnessing the power of the body for physical and spiritual perfection. Hit die: 1d8, Primary Ability: Dexterity + Wisdom, Saving Throw proficiencies: Strength + Dexterity, Armor and Weapon proficiencies: simple weapons, shortswords ==6");
-System.out.println("Paladin: Holy Warrior bound to a sacred oath. Hit die: 1d10, primary Ability: Strength + Charisma, Saving Throw proficiencies: Wisdom + Charisma, Armor and Weapon proficiencies: All armor, shields, simple and martial weapons ==7");
-System.out.println("Ranger: Warrior who uses martial prowess and nature magic. Hit die: 1d10, Primary Ability: Dexterity + Wisdom, Saving Throw proficiencies: Dexterity + Strength, Armor and Weapon proficiencies: Light/medium armor, shields, simple/martial weapons ==8");
-System.out.println("Rogue: Scoundril utilizing stealth and trickery. Hit die: 1d8, Primary Ability: Dexterity, Saving Throw proficiencies: Dexterity + Intelligence, Armor and Weapon proficiencies: Light armor, simple weapons, hand crossbows, long/shortswords, rapiers ==9");
-System.out.println("Sourcerer: Spellcaster who draws on magic from a gift or bloodline. Hit die: 1d6, Primary Ability: Charisma, Saving Throw proficiencies: Constitution + Charisma, Armor and Weapon proficiencies: Daggers, darts, slings, quarterstaffs, light crossbows ==10");
-System.out.println("Warlock: Wielder of magic, that came from a bargain with an extraplanar entity. Hit die: 1d8, Primary Ability: Charisma, Saving Throw proficiencies: Wisdom + Charisma, Armor and Weapon proficiencies: Light armor, simple weapons ==11");
-System.out.println("Wizard: Scholarly magic user, capable of manipulating the structures of reality. Hit die: 1d6, Primary Ability: Intelligence, Saving Throw proficiencies: Intelligence + Wisdom, Armor and Weapon proficiencies: Daggers, darts, slings, quarterstaffs, light crossbows ==12");
+           String BarbarianDescription = "Barbarian: Fierce Warrior with primitive background. Can enter a battle rage. Hit die: 1d12, Primary Ability: Strength, Saving Throw proficiencies: Strength + Constitution, Armor and Weapon proficiencies: Light/medium armor, shields, simple/martial weapons";
+        String BardDescription = "Bard: Inspiring Magician whose power echoes the music of creation. Hit die: 1d8, Primary Ability: Charisma, Saving Throw proficiencies: Dexterity + Charisma, Armor and Weapon proficiencies: Light armor, simple weapons, hand crossbows, long/shortswords, rapiers"; 
+String ClericDescription = "Cleric: Priestly champion who wields divine magic in service of a higher power. Hit die: 1d8, Primary Abilities: Wisdom, Saving Throw proficiencies: Wisdom + Charisma, Armor and Weapon proficiencies: Light/medium armor, shields, simple Weapons";
+String DruidDescription = "Druid: Priest of Old faith wielding the powers of nature. Able to adopt animal forms. Hit die: 1d8, Primary Ability: Wisdom, Saving Throw proficiencies: Wisdom + Intelligence, Armor and Weapon proficiencies: nonmetal light/medium armor, nonmetal shields, clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears";
+String FighterDescription = "Fighter: Master of martial combats and skilled with many weapons and armor. Hit die: 1d10, Primary Ability: Strength or Dexterity, Saving Throw proficiencies: Strength + Constitution, Armor and Weapon proficiencies: All armor, shields, simple/martial weapons";
+String MonkDescription = "Monk: Master of martial arts harnessing the power of the body for physical and spiritual perfection. Hit die: 1d8, Primary Ability: Dexterity + Wisdom, Saving Throw proficiencies: Strength + Dexterity, Armor and Weapon proficiencies: simple weapons, shortswords";
+String PaladinDescription = "Paladin: Holy Warrior bound to a sacred oath. Hit die: 1d10, primary Ability: Strength + Charisma, Saving Throw proficiencies: Wisdom + Charisma, Armor and Weapon proficiencies: All armor, shields, simple and martial weapons";
+String RangerDescription = "Ranger: Warrior who uses martial prowess and nature magic. Hit die: 1d10, Primary Ability: Dexterity + Wisdom, Saving Throw proficiencies: Dexterity + Strength, Armor and Weapon proficiencies: Light/medium armor, shields, simple/martial weapons";
+String RogueDescription = "Rogue: Scoundril utilizing stealth and trickery. Hit die: 1d8, Primary Ability: Dexterity, Saving Throw proficiencies: Dexterity + Intelligence, Armor and Weapon proficiencies: Light armor, simple weapons, hand crossbows, long/shortswords, rapiers";
+String SourcererDescription = "Sourcerer: Spellcaster who draws on magic from a gift or bloodline. Hit die: 1d6, Primary Ability: Charisma, Saving Throw proficiencies: Constitution + Charisma, Armor and Weapon proficiencies: Daggers, darts, slings, quarterstaffs, light crossbows";
+String WarlockDescription = "Warlock: Wielder of magic, that came from a bargain with an extraplanar entity. Hit die: 1d8, Primary Ability: Charisma, Saving Throw proficiencies: Wisdom + Charisma, Armor and Weapon proficiencies: Light armor, simple weapons";
+String WizardDescription = "Wizard: Scholarly magic user, capable of manipulating the structures of reality. Hit die: 1d6, Primary Ability: Intelligence, Saving Throw proficiencies: Intelligence + Wisdom, Armor and Weapon proficiencies: Daggers, darts, slings, quarterstaffs, light crossbows";
 Scanner sc3 = new Scanner(System.in);
 int clss = sc3.nextInt();
 String charclass = null;
@@ -143,17 +143,17 @@ switch (clss) {
 
 System.out.println("The stats for your character are randomly determined.");
 int str = rng();
-System.out.println("Strength: " + str + " + " + abilityScores[0]);
+String finstrenth = "Strength: " + str + " + " + abilityScores[0];
 int dex = rng();
-System.out.println("Dexterity: " + dex + " + " + abilityScores[1]);
+String findexterity = "Dexterity: " + dex + " + " + abilityScores[1];
 int con = rng();
-System.out.println("Constitution: " + con + " + " + abilityScores[2]);
+String finconstitution = "Constitution: " + con + " + " + abilityScores[2];
 int intel = rng();
-System.out.println("Intelligence: " + intel + " + " + abilityScores[3]);
+String finintelligence = "Intelligence: " + intel + " + " + abilityScores[3];
 int wis = rng();
-System.out.println("Wisdom: " + wis + " + " + abilityScores[4]);
+String finwisdon = "Wisdom: " + wis + " + " + abilityScores[4];
 int chr = rng();
-System.out.println("Charisma: " + chr + " + " + abilityScores[5]);
+String fincharisma = "Charisma: " + chr + " + " + abilityScores[5];
 str += abilityScores[0];
 dex += abilityScores[1];
 con += abilityScores[2];
