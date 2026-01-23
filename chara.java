@@ -9,14 +9,13 @@ int[] abilityScores = new int[6];
 int hpmax = 0;
         
 //race selection, no button/list
-        System.out.println("Choose your race");
-        System.out.println("Human: Very adaptive and innovative. +1 in all ability scores. Speed: 30ft, Size: Medium, type: Humanoid, Languages: Common + 1 other language, Traits: none ==1");
-        System.out.println("Hill Dwarf: Keen senses, deep intuition and remarkable resilience. +2 in Constitution +1 in wisdom +1 in hit point maximum. Speed: 25ft, Size: Medium, type: Humanoid, Languages: Common + Dwarvish, Darkvision: up to 60ft, Traits: Dwarven Resilience, Dwarven combat training, Tool proficiency, Stonecunning ==2"); 
-System.out.println("Mountain Dwarf: Strong, hardy, accustomed to difficult terrain. +2 in Constitution +2 in strength. Speed: 25ft, Size: Medium, type: Humanoid, Languages: Common + Dwarvish, Darkvision: up to 60ft, Traits: Dwarven Resilience, Dwarven combat training, Tool proficiency, Stonecunning, Dwarven Toughness ==3");
-System.out.println("High Elf: Keen mind and a mastery of basic magic. +2 in dexterity +1 in intelligence. Speed: 30ft, Size: Medium, type: Humanoid, Languages: Common + Elvish + 1 other Language, Darkvision: up to 60ft, Traits: Fey Ancestry, Keen Senses, Trance, Elf weapon Training, cantrip ==4");
-System.out.println("Wood Elf: Keen senses and intuition, very quick and stealthy in their native forests. +2 in dexterity +1 in wisdom. Speed: 35ft, Size: Medium, type: Humanoid, Languages: Common + Elvish, Darkvision: up to 60ft, Traits: Fey Ancestry, Keen Senses, Trance, Elf weapon Training, Mask of the wild ==5");
-System.out.println("Dark Elf (Drow): Following a path of evil and corruption. +2 in dexterity +1 in charisma. Speed: 30ft, Size: Medium, type: Humanoid, Languages: Common + Elvish, Darkvision: up to 120ft, Traits: Fey Ancestry, Keen Senses, Trance, Drow weapon Training, Sunlight sensitivity, Drow magic ==6");
-System.out.println("Tiefling: +2 in Charisma +1 in intelligence. Speed: 30ft, Size: Medium, type: Humanoid, Languages: Common + Infernal, Darkvision: up to 60ft, Traits: Hellish resistance, Infernal Legacy ==7");
+    String HumanDescript="Humans are adaptive and innovative. They gain +1 to all ability scores. and have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and one extra language of their choice. Humans do not have any special traits.";
+    String HillDwarfDescript="Hill Dwarves have keen senses, deep intuition, and remarkable resilience. They gain +2 to Constitution and +1 to Wisdom. Their hit point maximum increases by 1 every level. They have a base movement speed of 25ft.(7,620m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Dwarvish. They have Darkvision up to 60ft.(18,288m) and possess the traits Dwarven Resilience, Dwarven Combat Training, Tool Proficiency, and Stonecunning.";
+    String MountainDwarfDescript="Mountain Dwarves are strong and hardy, accustomed to a difficult terrain. They gain +2 to Constitution and +2 to Strength. They have a base movement speed of 25ft.(7,620m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Dwarvish. They have Darkvision up to 60ft.(18,288m) and possess the traits Dwarven Resilience, Dwarven Combat Training, Tool Proficiency, Stonecunning, and Dwarven Toughness.";
+    String HighElfDescript="High Elves have a keen mind and a mastery of basic magic. They gain +2 to Dexterity and +1 to Intelligence. They have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common, Elvish, and one extra language of their choice. They have Darkvision up to 60ft.(18,288m) and possess the traits Fey Ancestry, Keen Senses, Trance, Elf Weapon Training, and cantrip.";
+    String WoodElfDescript="Wood Elves have keen senses and intuition, and are very quick and stealthy in their native forests. They gain +2 to Dexterity and +1 to Wisdom. They have a base movement speed of 35ft.(10,668m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Elvish. They have Darkvision up to 60ft.(18,288m) and possess the traits Fey Ancestry, Keen Senses, Trance, Elf Weapon Training, and Mask of the Wild.";
+    String DarkElfDescript="Dark Elves, also known as Drow, follow a path of evil and corruption. They gain +2 to Dexterity and +1 to Charisma. They have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Elvish. They have Darkvision up to 120ft.(36,576m) and possess the traits Fey Ancestry, Keen Senses, Trance, Drow Weapon Training, Sunlight Sensitivity, and Drow Magic.";
+    String TieflingDescript="Tieflings gain +2 to Charisma and +1 to Intelligence. They have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Infernal. They have Darkvision up to 60ft.(18,288m) and possess the traits Hellish Resistance and Infernal Legacy.";
 Scanner sc2 = new Scanner(System.in);
 int rc = sc2.nextInt();
 String rac = null;
@@ -174,17 +173,18 @@ System.out.println(char_name + ". Is that right?");
 }
 
 //Final character sheet
-System.out.println("Here is your Character:");
-System.out.println("Name: " + char_name);
-System.out.println("Race: " + rac);
-System.out.println("Class: " + charclass);
-System.out.println("Strength: " + str);
-System.out.println("Dexterity: " + dex);
-System.out.println("Constitution: " + con);
-System.out.println("Intelligence: " + intel);
-System.out.println("Wisdom: " + wis);
-System.out.println("Charisma: " + chr);
-System.out.println("Hit Point Maximum: " + hpmax);
+String CharSheetTitle="--- Character Sheet ---";
+String CharSheetName="Name: "+char_name;
+String CharSheetRac="Species: "+rac;
+String CharSheetClass="Class: "+charclass;
+String CharSheetAbilities="--- Abilities ---";
+String CharSheetStr="Strength: "+str;
+String CharSheetDex="Dexterity: "+dex;
+String CharSheetCon="Constitution: "+con;
+String CharSheetIntel="Intelligence: "+intel;
+String CharSheetWis="Wisdom: "+wis;
+String CharSheetChr="Charisma: "+chr;
+String CharSheethpmax="Hit Point Maximum: "+hpmax;
     }
 
     public static int rng(){

@@ -23,6 +23,9 @@ public class MainWindow{
     public JPanel CharacterCreationMenuJPanel = new JPanel();
     public JButton CharacterCreationMenuJButton = new JButton("Create new chracter");
     public JLabel CharacterCreationMenuTitleJLabel = new JLabel("Create your Chracter!");
+        // Species Selction Components
+        public JComboBox<String> SpeciesSelectJComboBox = new JComboBox<String>();
+        public JLabel SpeciesSelectJLabel = new JLabel("Select your species:");
 
     //Created Character Menu Components
     public JPanel CreatedCharacterMenuJPanel = new JPanel();   
@@ -187,9 +190,21 @@ public class MainWindow{
         window.getContentPane().removeAll();
         System.out.println(DateTime.current()+ ": Loading Character Creation Menu JPanel.");
         window.getContentPane().add(CharacterCreationMenuJPanel);
+        CharacterCreationMenuJPanel.setBackground(Color.magenta);
         CharacterCreationMenuJPanel.setVisible(true);
         CurrentJPanel = "CharacterCreationMenu";
         //content
+        CharacterCreationMenuJPanel.add(MainMenuJButton);
+        MainMenuJButton.addActionListener(
+            new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    MainMenu();
+                }
+            }
+        );
+        MainMenuJButton.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        MainMenuJButton.setAlignmentY(java.awt.Component.BOTTOM_ALIGNMENT);
+        MainMenuJButton.setVisible(true);
         CharacterCreationMenuJPanel.add(CharacterCreationMenuTitleJLabel);
         CharacterCreationMenuTitleJLabel.setFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 50));
         CharacterCreationMenuTitleJLabel.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
