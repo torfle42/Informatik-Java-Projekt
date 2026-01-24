@@ -1,15 +1,15 @@
 import Util.DateTime;
-import Util.MainWindow;
+
 import javax.swing.SwingUtilities;
 public class Main{
     public static void main(String[] args){
         System.out.println(DateTime.current()+": Starting Informatik Java Projekt.");
+        gui_program program = new gui_program();
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                MainWindow main = new MainWindow();
+                program.Intialize_Program();
             }
         });
-        System.out.println(Util.Screeninfo.total());
     }
 }
