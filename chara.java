@@ -207,6 +207,121 @@ String CharSheethpmax="Hit Point Maximum: "+hpmax;
         return total;
     }
 
+    public static String getRaceDescription(String species) {
+        switch(species) {
+            case "Human":
+                return "Humans are adaptive and innovative. They gain +1 to all ability scores. and have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and one extra language of their choice. Humans do not have any special traits.";
+            case "Hill Dwarf":
+                return "Hill Dwarves have keen senses, deep intuition, and remarkable resilience. They gain +2 to Constitution and +1 to Wisdom. Their hit point maximum increases by 1 every level. They have a base movement speed of 25ft.(7,620m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Dwarvish. They have Darkvision up to 60ft.(18,288m) and possess the traits Dwarven Resilience, Dwarven Combat Training, Tool Proficiency, and Stonecunning.";
+            case "Mountain Dwarf":
+                return "Mountain Dwarves are strong and hardy, accustomed to a difficult terrain. They gain +2 to Constitution and +2 to Strength. They have a base movement speed of 25ft.(7,620m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Dwarvish. They have Darkvision up to 60ft.(18,288m) and possess the traits Dwarven Resilience, Dwarven Combat Training, Tool Proficiency, Stonecunning, and Dwarven Toughness.";
+            case "High Elf":
+                return "High Elves have a keen mind and a mastery of basic magic. They gain +2 to Dexterity and +1 to Intelligence. They have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common, Elvish, and one extra language of their choice. They have Darkvision up to 60ft.(18,288m) and possess the traits Fey Ancestry, Keen Senses, Trance, Elf Weapon Training, and cantrip.";
+            case "Wood Elf":
+                return "Wood Elves have keen senses and intuition, and are very quick and stealthy in their native forests. They gain +2 to Dexterity and +1 to Wisdom. They have a base movement speed of 35ft.(10,668m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Elvish. They have Darkvision up to 60ft.(18,288m) and possess the traits Fey Ancestry, Keen Senses, Trance, Elf Weapon Training, and Mask of the Wild.";
+            case "Dark Elf (Drow)":
+                return "Dark Elves, also known as Drow, follow a path of evil and corruption. They gain +2 to Dexterity and +1 to Charisma. They have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Elvish. They have Darkvision up to 120ft.(36,576m) and possess the traits Fey Ancestry, Keen Senses, Trance, Drow Weapon Training, Sunlight Sensitivity, and Drow Magic.";
+            case "Tiefling":
+                return "Tieflings gain +2 to Charisma and +1 to Intelligence. They have a base movement speed of 30ft.(9,144m). They are of medium size and are classified as humanoids. They can speak, read, and write Common and Infernal. They have Darkvision up to 60ft.(18,288m) and possess the traits Hellish Resistance and Infernal Legacy.";
+            default:
+                return "Select a race to see description.";
+        }
+    }
+
+    public static String getClassDescription(String className) {
+        switch(className) {
+            case "Barbarian":
+                return "Barbarian: Fierce Warrior with primitive background. Can enter a battle rage. Hit die: 1d12, Primary Ability: Strength, Saving Throw proficiencies: Strength + Constitution, Armor and Weapon proficiencies: Light/medium armor, shields, simple/martial weapons";
+            case "Bard":
+                return "Bard: Inspiring Magician whose power echoes the music of creation. Hit die: 1d8, Primary Ability: Charisma, Saving Throw proficiencies: Dexterity + Charisma, Armor and Weapon proficiencies: Light armor, simple weapons, hand crossbows, long/shortswords, rapiers";
+            case "Cleric":
+                return "Cleric: Priestly champion who wields divine magic in service of a higher power. Hit die: 1d8, Primary Abilities: Wisdom, Saving Throw proficiencies: Wisdom + Charisma, Armor and Weapon proficiencies: Light/medium armor, shields, simple Weapons";
+            case "Druid":
+                return "Druid: Priest of Old faith wielding the powers of nature. Able to adopt animal forms. Hit die: 1d8, Primary Ability: Wisdom, Saving Throw proficiencies: Wisdom + Intelligence, Armor and Weapon proficiencies: nonmetal light/medium armor, nonmetal shields, clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears";
+            case "Fighter":
+                return "Fighter: Master of martial combats and skilled with many weapons and armor. Hit die: 1d10, Primary Ability: Strength or Dexterity, Saving Throw proficiencies: Strength + Constitution, Armor and Weapon proficiencies: All armor, shields, simple/martial weapons";
+            case "Monk":
+                return "Monk: Master of martial arts harnessing the power of the body for physical and spiritual perfection. Hit die: 1d8, Primary Ability: Dexterity + Wisdom, Saving Throw proficiencies: Strength + Dexterity, Armor and Weapon proficiencies: simple weapons, shortswords";
+            case "Paladin":
+                return "Paladin: Holy Warrior bound to a sacred oath. Hit die: 1d10, primary Ability: Strength + Charisma, Saving Throw proficiencies: Wisdom + Charisma, Armor and Weapon proficiencies: All armor, shields, simple and martial weapons";
+            case "Ranger":
+                return "Ranger: Warrior who uses martial prowess and nature magic. Hit die: 1d10, Primary Ability: Dexterity + Wisdom, Saving Throw proficiencies: Dexterity + Strength, Armor and Weapon proficiencies: Light/medium armor, shields, simple/martial weapons";
+            case "Rogue":
+                return "Rogue: Scoundril utilizing stealth and trickery. Hit die: 1d8, Primary Ability: Dexterity, Saving Throw proficiencies: Dexterity + Intelligence, Armor and Weapon proficiencies: Light armor, simple weapons, hand crossbows, long/shortswords, rapiers";
+            case "Sourcerer":
+                return "Sourcerer: Spellcaster who draws on magic from a gift or bloodline. Hit die: 1d6, Primary Ability: Charisma, Saving Throw proficiencies: Constitution + Charisma, Armor and Weapon proficiencies: Daggers, darts, slings, quarterstaffs, light crossbows";
+            case "Warlock":
+                return "Warlock: Wielder of magic, that came from a bargain with an extraplanar entity. Hit die: 1d8, Primary Ability: Charisma, Saving Throw proficiencies: Wisdom + Charisma, Armor and Weapon proficiencies: Light armor, simple weapons";
+            case "Wizard":
+                return "Wizard: Scholarly magic user, capable of manipulating the structures of reality. Hit die: 1d6, Primary Ability: Intelligence, Saving Throw proficiencies: Intelligence + Wisdom, Armor and Weapon proficiencies: Daggers, darts, slings, quarterstaffs, light crossbows";
+            default:
+                return "Select a class to see description.";
+        }
+    }
+
+    public static int[] getRacialBonuses(String species) {
+        int[] bonuses = new int[6];
+        switch(species){
+            case "Human":
+                bonuses = new int[]{1,1,1,1,1,1};
+                break;
+            case "Hill Dwarf":
+                bonuses[2] = 2;
+                bonuses[4] = 1;
+                break;
+            case "Mountain Dwarf":
+                bonuses[0] = 2;
+                bonuses[2] = 2;
+                break;
+            case "High Elf":
+                bonuses[1] = 2;
+                bonuses[3] = 1;
+                break;
+            case "Wood Elf":
+                bonuses[1] = 2;
+                bonuses[4] = 1;
+                break;
+            case "Dark Elf (Drow)":
+                bonuses[1] = 2;
+                bonuses[5] = 1;
+                break;
+            case "Tiefling":
+                bonuses[3] = 1;
+                bonuses[5] = 2;
+                break;
+        }
+        return bonuses;
+    }
+
+    public static int getExtraHP(String species) {
+        switch(species){
+            case "Hill Dwarf": return 1;
+            default: return 0;
+        }
+    }
+
+    public static int getHitDie(String className) {
+        switch(className){
+            case "Barbarian": return 12;
+            case "Fighter":
+            case "Paladin":
+            case "Ranger": return 10;
+            case "Bard":
+            case "Cleric":
+            case "Druid":
+            case "Monk":
+            case "Rogue":
+            case "Warlock": return 8;
+            case "Sourcerer":
+            case "Wizard": return 6;
+            default: return 8;
+        }
+    }
+
+    public static int getBaseHP(String className) {
+        return getHitDie(className);
+    }
+
 
 
 }
