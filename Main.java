@@ -1,7 +1,10 @@
-import Util.DateTime;
+import Util.*;
+
+import java.io.IOException;
+
 import javax.swing.SwingUtilities;
 public class Main{
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         System.out.println(DateTime.current()+": Starting Informatik Java Projekt.");
         gui_program program = new gui_program();
         SwingUtilities.invokeLater(new Runnable() {
@@ -10,5 +13,6 @@ public class Main{
                 program.Intialize_Program();
             }
         });
+        Saves.save_setup();
     }
 }

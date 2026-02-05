@@ -1,29 +1,13 @@
-//Stunden am Versuch der Optimierung von Leserlichkeit und Struktur verschwendet: 15
+//Stunden am Versuch der Optimierung von Leserlichkeit und Struktur verschwendet: 18
 
 //Noch zu tun:
-// Create Character Menu implementieren
-// Created Character Menu implementieren
 // Charakterdatenstruktur und Speicherung implementieren
-// Flexibles Layout für verschiedene Bildschirmgrößen implementieren
-    // East South und Center Panel tauchen nocht nicht auf
-    // Komponenten Größenanpassung bei Fenstergrößenänderung implementieren
-// Fehlerbehandlung und Validierung hinzufügen
-// Swich Methode für Menüs implementieren
 //Credits Fenster implementieren
-// west Panel Buttons Stylen
-// West Panel Buttons im West Panel zentrieren
+// west Panel Buttons stylen
 // West Panel Buttons interaktiv machen (Hover Effekte etc.)
-
-//Done:
-// Grundlegende GUI Struktur mit BorderLayout erstellt
-// Hauptmenü mit Buttons erstellt
-
-
 import Util.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemListener;
-import java.util.Arrays;
 import javax.swing.*;
 public class gui_program{
     
@@ -92,11 +76,12 @@ public class gui_program{
     static {
         System.out.println(DateTime.current()+": Beginne mit der Deklaration und Initialisierung der Menu Componenten");
     }
+    private JPanel panel = new JPanel();
+
         // Main Menu
         private final JPanel Main_Menu_Panel = new JPanel();
-        private final JLabel Main_Menu_Description_Title = new JLabel("Willkommen zum D&D 5th Edition Character Creator! ");
         private final JPanel Main_Menu_Description_Panel = new JPanel();
-        private final JLabel Main_Menu_Description_Text = new JLabel("Dieses Programm hilft dir dabei, Charaktere für das Dungeons & Dragons 5th Edition Rollenspiel zu erstellen. Klicke auf , um zu beginnen.");
+        private final JLabel Main_Menu_Description_Text = new JLabel("<html><body style='width:300px'>Dieses Programm hilft dir dabei, Charaktere für das Dungeons & Dragons 5th Edition Rollenspiel zu erstellen. Klicke auf , um zu beginnen.<body><head>");
         private final JPanel Main_Menu_Information_Panel = new JPanel();
         private final JLabel Main_Menu_Information_Text = new JLabel ("<html><body style='width:300px'>Der Creator ist noch sehr basisch es fehlen noch Features, um einen DnD 5E Character komplett zu erstellen: Startequipment, Hintergrund, Subclasses, Einige Völker, Sprachen, (Klassen/Volk-)Fertigkeiten (+ Übung und Expertise), Zauber, Feats, Rüstungsklasse, andere Wert Berechnungsmethoden(Standardarray und Point-Buy), und erweiterte Startoptionen (Characterlevel, Startgold etc.)</body></html>");
 
@@ -199,10 +184,10 @@ public class gui_program{
                 Create_Character_Button.setAlignmentX(Component.LEFT_ALIGNMENT);
                 Create_Character_Button.setAlignmentY(Component.CENTER_ALIGNMENT);
                 
-                West_Panel.add(Created_Characters_Menu_Button);
-                Created_Characters_Menu_Button.addActionListener(Created_Characters_Menu_ActionListener);
-                Created_Characters_Menu_Button.setAlignmentX(Component.LEFT_ALIGNMENT);
-                Created_Characters_Menu_Button.setAlignmentY(Component.CENTER_ALIGNMENT);
+                //West_Panel.add(Created_Characters_Menu_Button); wird aktuell nicht angezeigt, da die Speicherung noch nicht funktioniert
+                //Created_Characters_Menu_Button.addActionListener(Created_Characters_Menu_ActionListener);
+                //Created_Characters_Menu_Button.setAlignmentX(Component.LEFT_ALIGNMENT);
+                //Created_Characters_Menu_Button.setAlignmentY(Component.CENTER_ALIGNMENT);
 
                 West_Panel.add(Exit_Program_Button);
                 Exit_Program_Button.addActionListener(Exit_Program_ActionListener);
@@ -244,11 +229,7 @@ public class gui_program{
 
             //hinzufügen der Main Menu Componenten
             System.out.println(DateTime.current()+": füge Main Menu Componenten ein");
-            Main_Menu_Panel.add(Main_Menu_Description_Title);
-            Main_Menu_Description_Title.setFont(new Font("Serif", Font.BOLD,24));
-            Main_Menu_Description_Title.setBackground(Color.black);
-            Main_Menu_Description_Title.setAlignmentX(Component.CENTER_ALIGNMENT);
-            Main_Menu_Description_Title.setVisible(true);
+            
 
                 //Main Menu Description & Information
                 Main_Menu_Panel.add(Main_Menu_Description_Panel);
@@ -261,8 +242,9 @@ public class gui_program{
                 Main_Menu_Description_Panel.add(Main_Menu_Information_Panel);
                 Main_Menu_Information_Panel.setLayout(new FlowLayout());
                 Main_Menu_Information_Panel.add(Main_Menu_Information_Text);
+                Main_Menu_Information_Panel.setBackground(Color.red);
                 Main_Menu_Information_Text.setFont(new Font("Serif", Font.BOLD,16));
-                Main_Menu_Information_Text.setForeground(Color.RED);
+                Main_Menu_Information_Text.setForeground(Color.white);
                 Main_Menu_Information_Text.setVisible(true);
             System.out.println(DateTime.current()+": Main Menu Componenten eingefügt");
         Main_Menu_Panel.revalidate();
@@ -281,7 +263,6 @@ public class gui_program{
     }
     public void Create_Character_Menu(){
         System.out.println(DateTime.current()+": Öffne Create Character Menu");
-        JPanel panel = new JPanel();
         panel.setBackground(Color.white);
         panel.setLayout(new BorderLayout());
 
@@ -368,12 +349,12 @@ public class gui_program{
     }
     
     private void saveCharacter() {
-        String characterName = Name_TextField.getText();
+        String Character_Name = Name_TextField.getText();
         String characterSpecies = (String) Species_ComboBox.getSelectedItem();
         String characterClass = (String) Class_ComboBox.getSelectedItem();
         String stats = Stats_Display.getText();
         
-        if(characterName.isEmpty()) {
+        if(Character_Name.isEmpty()) {
             JOptionPane.showMessageDialog(Main_Window_Frame, "Please enter a character name.", "Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -384,7 +365,7 @@ public class gui_program{
         }
         
         String characterOutput = "=== CHARACTER SHEET ===\n" +
-                                "Name: " + characterName + "\n" +
+                                "Name: " + Character_Name + "\n" +
                                 "Species: " + characterSpecies + "\n" +
                                 "Class: " + characterClass + "\n" +
                                 "\n" +
@@ -416,5 +397,8 @@ public class gui_program{
         dialog.add(dialogPanel);
         dialog.setVisible(true);
     }
-    public void Credits_Menu(){}
+    public void Credits_Menu(){
+        System.out.println(DateTime.current()+"lade Credits");
+        panel.setBackground(Color.white);
+    }
 }

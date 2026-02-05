@@ -161,30 +161,7 @@ intel += abilityScores[3];
 wis += abilityScores[4];
 chr += abilityScores[5];
 
-//Name (Not completed because I have no UI button)
-String char_name=null;
-while (a == false) {
-            
-        
-        Scanner sc = new Scanner(System.in);
-System.out.println("Finally, enter your new name");
-char_name = sc.nextLine();
-System.out.println(char_name + ". Is that right?");
-}
 
-//Final character sheet
-String CharSheetTitle="--- Character Sheet ---";
-String CharSheetName="Name: "+char_name;
-String CharSheetRac="Species: "+rac;
-String CharSheetClass="Class: "+charclass;
-String CharSheetAbilities="--- Abilities ---";
-String CharSheetStr="Strength: "+str;
-String CharSheetDex="Dexterity: "+dex;
-String CharSheetCon="Constitution: "+con;
-String CharSheetIntel="Intelligence: "+intel;
-String CharSheetWis="Wisdom: "+wis;
-String CharSheetChr="Charisma: "+chr;
-String CharSheethpmax="Hit Point Maximum: "+hpmax;
     }
 
     public static int rng(){
@@ -317,11 +294,7 @@ String CharSheethpmax="Hit Point Maximum: "+hpmax;
             default: return 8;
         }
     }
-
     public static int getBaseHP(String className) {
         return getHitDie(className);
     }
-
-
-
 }
